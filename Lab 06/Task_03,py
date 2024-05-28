@@ -1,0 +1,28 @@
+class Game:
+    def __init__(self, list_a, list_b):
+        self.stack_a = list(reversed(list_a))
+        self.stack_b = list(reversed(list_b))
+        self.output_list = []
+
+    def play(self):
+        while self.stack_a and self.stack_b:
+            a = self.stack_a[-1]
+            b = self.stack_b[-1]
+            if a > b:
+                self.output_list.append(1)
+                self.stack_b.pop()
+            elif a < b:
+                self.output_list.append(2)
+                self.stack_a.pop()
+            else:
+                self.output_list.append(0)
+                self.stack_a.pop()
+                self.stack_b.pop()
+        return self.output_list
+
+# Example usage:
+list_a = [1, 2, 3, 4, 5]
+list_b = [1, 2, 3, 4, 5]
+game = Game(list_a, list_b)
+output_list = game.play()
+print(output_list)

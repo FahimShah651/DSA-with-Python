@@ -1,0 +1,5 @@
+import sys
+n = int(sys.argv[10])
+print(n)
+print("".join(str(i*2) for i in range(n)))
+

@@ -1,0 +1,11 @@
+f1 = 1
+f2 = 2
+f3 = 5
+print(f2, end="")
+f = f1 + f2 + f3
+while f <= 100:
+    print(", ", f, end="")
+    f1 = f2
+    f2 = f3
+    f3 = f
+    f = f1 + f2 + f3
